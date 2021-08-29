@@ -18,7 +18,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.stream.Collectors;
 
-// 这个值应该与 META-INF/mods.toml 文件中定义的任何一个条目匹配。
+// 这个值应该与 META-INF/mods.toml 文件中定义的其中一个条目匹配。
 @Mod("examplemod")
 public class ExampleMod
 {
@@ -26,7 +26,8 @@ public class ExampleMod
 	// 译者注：我们强烈建议写一个Getter来使其他类获取到这个Logger，这也是最推荐的做法。
     private static final Logger LOGGER = LogManager.getLogger();
 
-    public ExampleMod() {
+    public ExampleMod() 
+    {
 		// 注册模组加载中的启动方法
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
 		// 注册模组加载中的“跨模组通信入队”方法
@@ -47,7 +48,8 @@ public class ExampleMod
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
     }
 
-    private void doClientStuff(final FMLClientSetupEvent event) {
+    private void doClientStuff(final FMLClientSetupEvent event)
+    {
 		// 做一些只有客户端可以做的事情
         LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().options);
     }
@@ -68,7 +70,8 @@ public class ExampleMod
 	// 你可以使用@SubscribeEvent来让“事件总线”来发现需要调用的方法。
 	// 译者注：使用它之后方法的参数只能是单一事件。
     @SubscribeEvent
-    public void onServerStarting(FMLServerStartingEvent event) {
+    public void onServerStarting(FMLServerStartingEvent event) 
+    {
 		// 在服务器启动时搞点事情
         LOGGER.info("HELLO from server starting");
     }
@@ -78,7 +81,8 @@ public class ExampleMod
     @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
     public static class RegistryEvents {
         @SubscribeEvent
-        public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
+        public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) 
+	{
 			// 这里注册一个新方块。
 			// 译者注：实际上并没有注册任何东西，但是我们成功写了一个 Hello World ！
             LOGGER.info("HELLO from Register Block");
