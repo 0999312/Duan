@@ -39,13 +39,14 @@ displayName="Example Mod" #必填字段
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #选填字段
 
 # 模组展示用的 LOGO 的文件名，该文件应置于模组 JAR 内的根目录下
-logoFile="examplemod.png" #选填字段
+# 找不到文件会导致崩溃。
+#logoFile="examplemod.png" #选填字段
 
 # 一段在模组用户界面中的展示文字
-credits="Thanks for this example mod goes to Java" #选填字段
+credits="谢天谢地这个示例模组是Java写的" #选填字段
 
 # 一段在模组用户界面中的展示文字
-authors="Love, Cheese and small house plants" #选填字段
+authors="爱、芝士与小屋里的植物" #选填字段
 
 # 一段在模组用户界面中的展示文字 (允许写成多行) (#必填字段)
 description='''
